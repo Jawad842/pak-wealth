@@ -1,0 +1,1772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pak Wealth - Trusted Investment Platform in Pakistan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0a3d62;
+            --secondary: #1e3799;
+            --accent: #1e90ff;
+            --success: #2ed573;
+            --light: #f5f5f5;
+            --white: #ffffff;
+            --text: #333333;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--light);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 20px 0;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            animation: slideDown 0.8s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo img {
+            height: 60px;
+            border-radius: 8px;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .balance-display {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            animation: fadeIn 1s ease-out 0.5s both;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .balance-display h3 {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+        
+        .balance-amount {
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+        
+        /* Navigation */
+        nav {
+            background-color: var(--secondary);
+            padding: 12px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0 20px;
+        }
+        
+        .nav-container a {
+            color: var(--white);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            transition: all 0.3s;
+            font-weight: 500;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-container a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent);
+            transition: width 0.3s;
+        }
+        
+        .nav-container a:hover::after {
+            width: 100%;
+        }
+        
+        .nav-container a:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(10, 61, 98, 0.8), rgba(30, 55, 153, 0.8)), 
+                        url('https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80') center/cover;
+            height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-align: center;
+            padding: 20px;
+            animation: zoomIn 1.2s ease-out;
+        }
+        
+        @keyframes zoomIn {
+            from { transform: scale(1.1); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            animation: slideUp 1s ease-out 0.3s both;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            animation: slideUp 1s ease-out 0.5s both;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(30, 144, 255, 0.4);
+            animation: slideUp 1s ease-out 0.7s both;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            background-color: #0d7ae6;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(30, 144, 255, 0.6);
+        }
+        
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        
+        .section {
+            background: var(--white);
+            margin: 30px 0;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease-out;
+        }
+        
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .section h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+        }
+        
+        /* Profit Calculator */
+        .profit-calculator {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 40px 0;
+            animation: pulse 3s infinite;
+        }
+        
+        .calculator-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .calculator-result {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .investment-amount {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .profit-amount {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--success);
+        }
+        
+        .profit-note {
+            margin-top: 15px;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .service-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            border-top: 4px solid var(--accent);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .service-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        /* Contact Box */
+        .contact-box {
+            background: #e8f4f8;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid var(--accent);
+        }
+        
+        .contact-details {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .contact-icon {
+            background: var(--accent);
+            color: var(--white);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: transform 0.3s;
+        }
+        
+        .contact-item:hover .contact-icon {
+            transform: rotate(15deg) scale(1.1);
+        }
+        
+        /* Deposit Info */
+        .deposit-info {
+            background: #e8f6ef;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid var(--success);
+        }
+        
+        .account-details {
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        .account-details p {
+            margin: 10px 0;
+            font-size: 1.1rem;
+        }
+        
+        .deposit-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 25px;
+        }
+        
+        .deposit-step {
+            flex: 1;
+            min-width: 250px;
+            background: var(--white);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+        
+        .deposit-step-icon {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+        
+        /* Withdraw Process */
+        .withdraw-process {
+            background: #fff9e6;
+            padding: 25px;
+            border-radius: 10px;
+            border-left: 5px solid #fbc531;
+        }
+        
+        .process-steps {
+            margin-top: 20px;
+        }
+        
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.5s ease-out;
+        }
+        
+        .step.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .step-number {
+            background: var(--accent);
+            color: var(--white);
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .testimonial-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid var(--accent);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease-out;
+        }
+        
+        .testimonial-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
+        
+        /* Stats Section */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .stat-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            transform: scale(0.9);
+            transition: all 0.5s ease-out;
+        }
+        
+        .stat-card.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            color: var(--text);
+            font-size: 1.1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: var(--white);
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--accent);
+        }
+        
+        .footer-links a {
+            display: block;
+            color: #ddd;
+            margin-bottom: 10px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Page Navigation */
+        .page-nav {
+            display: flex;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 10px;
+        }
+        
+        .page-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .page-btn:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .investment-amount {
+                font-size: 1.5rem;
+            }
+            
+            .profit-amount {
+                font-size: 2rem;
+            }
+            
+            .page-nav {
+                flex-wrap: wrap;
+            }
+            
+            .deposit-steps {
+                flex-direction: column;
+            }
+        }
+        
+        /* Page Styles */
+        .page {
+            display: none;
+        }
+        
+        .page.active {
+            display: block;
+        }
+        
+        /* Referral Section */
+        .referral-box {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border: 2px dashed var(--accent);
+        }
+        
+        .referral-code {
+            background: var(--primary);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            display: inline-block;
+            margin: 10px 0;
+            font-family: monospace;
+            font-size: 1.2rem;
+        }
+        
+        /* Content Images */
+        .content-image {
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: var(--shadow);
+        }
+        
+        .image-container {
+            display: flex;
+            gap: 20px;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+        
+        .image-card {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
+        
+        .image-card img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .image-card p {
+            margin-top: 10px;
+            font-style: italic;
+            color: #666;
+        }
+        
+        /* Investment Plans */
+        .investment-plans {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .plan-card {
+            background: var(--white);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--accent);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .plan-card.featured {
+            border-top: 4px solid var(--success);
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .plan-card.featured::before {
+            content: 'MOST POPULAR';
+            position: absolute;
+            top: 15px;
+            right: -30px;
+            background: var(--success);
+            color: white;
+            padding: 5px 30px;
+            transform: rotate(45deg);
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .plan-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+        
+        .plan-name {
+            font-size: 1.5rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .plan-amount {
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--success);
+            margin-bottom: 15px;
+        }
+        
+        .plan-features {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .plan-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .plan-button {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        
+        .plan-button:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        /* Selected Plan Display */
+        .selected-plan {
+            background: #f0f8ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            border-left: 5px solid var(--accent);
+            display: none;
+        }
+        
+        .selected-plan.active {
+            display: block;
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .plan-confirmation {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .plan-confirmation-icon {
+            background: var(--success);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border 0.3s;
+        }
+        
+        .form-input:focus {
+            border-color: var(--accent);
+            outline: none;
+        }
+        
+        .form-select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            background: white;
+            cursor: pointer;
+        }
+        
+        .submit-button {
+            background: var(--success);
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            width: 100%;
+        }
+        
+        .submit-button:hover {
+            background: #25c768;
+            transform: translateY(-3px);
+        }
+        
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--success);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        
+        .toast.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .toast-icon {
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="https://via.placeholder.com/180x60/0a3d62/ffffff?text=Pak+Wealth" alt="Pak Wealth Logo">
+                <div class="logo-text">
+                    <h1>Pak Wealth</h1>
+                    <p>Trusted Investment Platform in Pakistan</p>
+                </div>
+            </div>
+            <div class="balance-display">
+                <h3>Your Balance</h3>
+                <div class="balance-amount">PKR 0</div>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="nav-link" data-page="home">Home</a>
+            <a href="#" class="nav-link" data-page="investment">Investment Plan</a>
+            <a href="#" class="nav-link" data-page="services">Services</a>
+            <a href="#" class="nav-link" data-page="deposit">Deposit</a>
+            <a href="#" class="nav-link" data-page="withdraw">Withdraw</a>
+            <a href="#" class="nav-link" data-page="about">About Us</a>
+            <a href="#" class="nav-link" data-page="contact">Contact</a>
+        </div>
+    </nav>
+    
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-icon">
+            <i class="fas fa-check-circle"></i>
+        </div>
+        <div class="toast-message">Plan selected successfully!</div>
+    </div>
+    
+    <!-- Home Page -->
+    <div id="home" class="page active">
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Invest PKR 27,000 & Earn PKR 39,750 Profit</h2>
+                <p>Join Pakistan's most trusted investment platform for high returns and financial growth</p>
+                <a href="#" class="cta-button nav-link" data-page="investment">Start Investing Now</a>
+            </div>
+        </section>
+        
+        <div class="container">
+            <section class="section" id="investment-highlight">
+                <h2>Investment Plan</h2>
+                <p>Our carefully designed investment plan ensures maximum returns with complete security for your funds. We utilize proven financial strategies to generate consistent profits for our investors.</p>
+                
+                <div class="profit-calculator">
+                    <h3 class="calculator-title">Your Investment Potential</h3>
+                    <div class="calculator-result">
+                        <div class="investment-amount">Minimum Investment: PKR 27,000</div>
+                        <div class="profit-amount">Guaranteed Profit: PKR 39,750</div>
+                    </div>
+                    <p class="profit-note">That's a significant 47% return on your investment with Pak Wealth!</p>
+                </div>
+                
+                <div class="image-container">
+                    <div class="image-card">
+                        <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Investment Growth">
+                        <p>Strategic investment growth</p>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Financial Security">
+                        <p>Secure financial future</p>
+                    </div>
+                </div>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>High Returns</h3>
+                        <p>Earn substantial profits with our proven investment strategies and market analysis.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Secure Investment</h3>
+                        <p>Your funds are protected with our secure investment protocols and risk management.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Quick Processing</h3>
+                        <p>Fast deposit and withdrawal processing for your convenience and financial flexibility.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3>24/7 Support</h3>
+                        <p>Our dedicated support team is always available to assist you with any queries.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="stats">
+                <div class="stat-card">
+                    <div class="stat-number">5,000+</div>
+                    <div class="stat-label">Happy Investors</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">PKR 250M+</div>
+                    <div class="stat-label">Total Investments</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">PKR 120M+</div>
+                    <div class="stat-label">Profits Paid</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Success Rate</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Investment Plan Page -->
+    <div id="investment" class="page">
+        <div class="container">
+            <section class="section">
+                <h2>Investment Plan</h2>
+                <p>Our carefully designed investment plan ensures maximum returns with complete security for your funds. We utilize proven financial strategies to generate consistent profits for our investors.</p>
+                
+                <div class="profit-calculator">
+                    <h3 class="calculator-title">Your Investment Potential</h3>
+                    <div class="calculator-result">
+                        <div class="investment-amount">Minimum Investment: PKR 27,000</div>
+                        <div class="profit-amount">Guaranteed Profit: PKR 39,750</div>
+                    </div>
+                    <p class="profit-note">That's a significant 47% return on your investment with Pak Wealth!</p>
+                </div>
+                
+                <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Investment Growth Chart" class="content-image">
+                
+                <h3>How Our Investment Model Works</h3>
+                <p>Our investment strategy is based on a diversified portfolio approach that minimizes risk while maximizing returns. We invest in multiple sectors including technology, real estate, and commodities to ensure consistent growth.</p>
+                
+                <h3>Choose Your Investment Plan</h3>
+                <p>Select from our range of investment plans designed to suit different financial goals and risk appetites. Each plan offers competitive returns with full transparency.</p>
+                
+                <div class="investment-plans">
+                    <div class="plan-card">
+                        <div class="plan-name">Starter Plan</div>
+                        <div class="plan-amount">PKR 27,000</div>
+                        <ul class="plan-features">
+                            <li>47% Return on Investment</li>
+                            <li>3-Month Investment Period</li>
+                            <li>24/7 Account Monitoring</li>
+                            <li>Basic Support</li>
+                            <li>PKR 12,690 Profit</li>
+                        </ul>
+                        <button class="plan-button" data-plan="starter" data-amount="27000">Select Plan</button>
+                    </div>
+                    
+                    <div class="plan-card featured">
+                        <div class="plan-name">Premium Plan</div>
+                        <div class="plan-amount">PKR 50,000</div>
+                        <ul class="plan-features">
+                            <li>52% Return on Investment</li>
+                            <li>6-Month Investment Period</li>
+                            <li>Priority Support</li>
+                            <li>Monthly Progress Reports</li>
+                            <li>PKR 26,000 Profit</li>
+                        </ul>
+                        <button class="plan-button" data-plan="premium" data-amount="50000">Select Plan</button>
+                    </div>
+                    
+                    <div class="plan-card">
+                        <div class="plan-name">Elite Plan</div>
+                        <div class="plan-amount">PKR 100,000</div>
+                        <ul class="plan-features">
+                            <li>60% Return on Investment</li>
+                            <li>12-Month Investment Period</li>
+                            <li>Dedicated Account Manager</li>
+                            <li>Weekly Progress Updates</li>
+                            <li>PKR 60,000 Profit</li>
+                        </ul>
+                        <button class="plan-button" data-plan="elite" data-amount="100000">Select Plan</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Services Page -->
+    <div id="services" class="page">
+        <div class="container">
+            <section class="section">
+                <h2>Our Investment Services</h2>
+                <p>Pak Wealth offers a comprehensive range of investment and financial services designed to maximize your earnings and secure your financial future.</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-hand-holding-usd"></i>
+                        </div>
+                        <h3>High-Yield Investments</h3>
+                        <p>Access our exclusive high-yield investment opportunities with returns significantly above market averages.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3>Portfolio Management</h3>
+                        <p>Professional management of your investment portfolio to optimize returns and minimize risks.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h3>Risk Assessment</h3>
+                        <p>Comprehensive risk analysis to ensure your investments align with your financial goals and risk tolerance.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <h3>Wealth Accumulation</h3>
+                        <p>Strategic plans to systematically grow your wealth through compound interest and reinvestment.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-file-invoice-dollar"></i>
+                        </div>
+                        <h3>Profit Distribution</h3>
+                        <p>Timely and transparent distribution of profits with detailed reporting on your earnings.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3>Financial Consultation</h3>
+                        <p>Personalized financial advice to help you make informed investment decisions for maximum returns.</p>
+                    </div>
+                </div>
+                
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2015&q=80" alt="Financial Services" class="content-image">
+                
+                <h3>Why Choose Our Investment Services?</h3>
+                <p>With years of experience in the financial sector, our team of experts has developed proven strategies to generate consistent returns for our clients. We prioritize transparency, security, and customer satisfaction in all our services.</p>
+                
+                <div class="image-container">
+                    <div class="image-card">
+                        <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1911&q=80" alt="Professional Team">
+                        <p>Our expert financial team</p>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Secure Investments">
+                        <p>Secure investment protocols</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Deposit Page -->
+    <div id="deposit" class="page">
+        <div class="container">
+            <section class="section">
+                <h2>Deposit Funds</h2>
+                <p>To start your investment journey with Pak Wealth, follow our simple deposit process. We've made it secure and straightforward to fund your account and begin earning profits.</p>
+                
+                <!-- Selected Plan Display -->
+                <div class="selected-plan" id="selected-plan">
+                    <div class="plan-confirmation">
+                        <div class="plan-confirmation-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div>
+                            <h3>Your Selected Plan: <span id="selected-plan-name">Starter Plan</span></h3>
+                            <p>Investment Amount: <strong id="selected-plan-amount">PKR 27,000</strong></p>
+                            <p>Expected Profit: <strong id="selected-plan-profit">PKR 12,690</strong></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="deposit-info">
+                    <h3><i class="fas fa-wallet"></i> JazzCash Deposit Account</h3>
+                    
+                    <div class="account-details">
+                        <p><strong>Account Name:</strong> Iffat Arif</p>
+                        <p><strong>Account Number:</strong> 03119478209</p>
+                        <p><strong>Investment Amount:</strong> <span id="deposit-amount">PKR 27,000</span></p>
+                    </div>
+                    
+                    <h4 style="margin-top: 20px;">How to Deposit Funds</h4>
+                    <div class="deposit-steps">
+                        <div class="deposit-step">
+                            <div class="deposit-step-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h4>Step 1: Open JazzCash</h4>
+                            <p>Launch your JazzCash mobile app or dial *786# from your Jazz number</p>
+                        </div>
+                        
+                        <div class="deposit-step">
+                            <div class="deposit-step-icon">
+                                <i class="fas fa-money-bill-wave"></i>
+                            </div>
+                            <h4>Step 2: Send Money</h4>
+                            <p>Select "Send Money" option and enter our account number</p>
+                        </div>
+                        
+                        <div class="deposit-step">
+                            <div class="deposit-step-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <h4>Step 3: Email Confirmation</h4>
+                            <p>Email transaction details to sb1818063@gmail.com for verification</p>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 20px; background: #e8f6ef; padding: 15px; border-radius: 8px;">
+                        <h4><i class="fas fa-shield-alt"></i> Security Notice</h4>
+                        <p>For your security, always verify you're sending funds to the correct account. Double-check the account name and number before proceeding with your transaction.</p>
+                    </div>
+                    
+                    <p style="margin-top: 20px;"><strong>Important:</strong> After making the deposit, please email the transaction details (transaction ID, amount, date) to our support team at sb1818063@gmail.com for verification. Your investment will be activated within 2 hours of verification.</p>
+                </div>
+                
+                <h3>Investment Confirmation</h3>
+                <p>To complete your investment, please provide the following details after making your deposit:</p>
+                
+                <div class="contact-box">
+                    <form id="investment-form">
+                        <div class="form-group">
+                            <label class="form-label" for="full-name">Full Name</label>
+                            <input type="text" id="full-name" class="form-input" placeholder="Enter your full name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="phone">Phone Number</label>
+                            <input type="tel" id="phone" class="form-input" placeholder="Enter your phone number" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="email">Email Address</label>
+                            <input type="email" id="email" class="form-input" placeholder="Enter your email address" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="transaction-id">Transaction ID</label>
+                            <input type="text" id="transaction-id" class="form-input" placeholder="Enter your JazzCash transaction ID" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label" for="investment-plan">Selected Investment Plan</label>
+                            <select id="investment-plan" class="form-select" required>
+                                <option value="">Select your plan</option>
+                                <option value="starter">Starter Plan (PKR 27,000)</option>
+                                <option value="premium">Premium Plan (PKR 50,000)</option>
+                                <option value="elite">Elite Plan (PKR 100,000)</option>
+                            </select>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">
+                            <i class="fas fa-paper-plane"></i> Submit Investment Details
+                        </button>
+                    </form>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Withdraw Page -->
+    <div id="withdraw" class="page">
+        <div class="container">
+            <section class="section">
+                <h2>Withdraw Your Profits</h2>
+                <p>Withdrawing your profits from Pak Wealth is simple and hassle-free with our expedited process designed to get your funds to you quickly and securely.</p>
+                
+                <div class="withdraw-process">
+                    <h3><i class="fas fa-money-bill-wave"></i> Withdrawal Process</h3>
+                    
+                    <div class="referral-box">
+                        <h4><i class="fas fa-user-plus"></i> Referral Requirement</h4>
+                        <p>To qualify for withdrawals, you need to refer <strong>at least 1 person</strong> who successfully invests with Pak Wealth. This helps us grow our community while rewarding you for your support.</p>
+                        <p>Share your referral code with friends and family:</p>
+                        <div class="referral-code">PAKWEALTH-2023</div>
+                        <p style="margin-top: 10px;">You'll earn a 5% bonus on your referral's first investment!</p>
+                    </div>
+                    
+                    <div class="process-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Submit Request</h4>
+                                <p>Contact our support team via email with your withdrawal request, account details, and referral information.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Verification</h4>
+                                <p>We'll verify your account, investment status, and referral requirement fulfillment.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Receive Funds</h4>
+                                <p>Your withdrawal will be processed within <strong>3 hours maximum</strong> after verification during business hours.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 20px; background: #e8f6ef; padding: 15px; border-radius: 8px;">
+                        <h4><i class="fas fa-bolt"></i> Express Withdrawal Guarantee</h4>
+                        <p>We guarantee that all verified withdrawal requests will be processed within <strong>3 hours</strong> during business hours (9 AM - 6 PM PKT). Weekend requests are processed on the next business day.</p>
+                    </div>
+                </div>
+                
+                <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80" alt="Withdrawal Process" class="content-image">
+                
+                <h3>Withdrawal Methods</h3>
+                <p>We offer multiple withdrawal methods to ensure you receive your profits conveniently:</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>JazzCash</h3>
+                        <p>Direct transfer to your JazzCash account for instant access to your funds.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h3>Bank Transfer</h3>
+                        <p>Secure bank transfer to your designated account within 24 hours.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-wallet"></i>
+                        </div>
+                        <h3>EasyPaisa</h3>
+                        <p>Quick transfer to your EasyPaisa wallet for immediate use.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- About Us Page -->
+    <div id="about" class="page">
+        <div class="container">
+            <section class="section">
+                <h2>About Pak Wealth</h2>
+                <p>Pak Wealth is a premier financial gateway for Pakistanis, built on a foundation of trust and innovation. We empower our investors by providing access to exceptional growth opportunities right here in Pakistan.</p>
+                
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="About Pak Wealth" class="content-image">
+                
+                <h3>Our Mission</h3>
+                <p>We believe in transparency and results. Our unique model is designed to generate substantial profits, turning your strategic investment of <strong>PKR 27,000</strong> into a remarkable <strong>PKR 39,750</strong> return. Your financial growth is our commitment. Your trust is our most valuable asset.</p>
+                
+                <h3>Our Investment Philosophy</h3>
+                <p>At Pak Wealth, we follow a disciplined investment approach that focuses on long-term growth while managing risks effectively. Our team of financial experts continuously monitors market trends to identify the most promising investment opportunities for our clients.</p>
+                
+                <div class="image-container">
+                    <div class="image-card">
+                        <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Investment Strategy">
+                        <p>Strategic investment approach</p>
+                    </div>
+                    <div class="image-card">
+                        <img src="https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2073&q=80" alt="Team Collaboration">
+                        <p>Expert team collaboration</p>
+                    </div>
+                </div>
+                
+                <h3>What Our Investors Say</h3>
+                <div class="testimonials">
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "I was hesitant at first, but Pak Wealth delivered exactly what they promised. My investment grew significantly in just a few weeks. The referral program is an excellent bonus too!"
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AA</div>
+                            <div>
+                                <h4>Ahmed Ali</h4>
+                                <p>Investor from Karachi</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "The process was smooth and transparent. I received my profits exactly as promised. The 3-hour withdrawal guarantee is impressive - they processed mine in just 2 hours!"
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">FS</div>
+                            <div>
+                                <h4>Fatima Shah</h4>
+                                <p>Investor from Lahore</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div class="testimonial-text">
+                            "I've tried several investment platforms, but Pak Wealth stands out with their professionalism and high returns. The detailed deposit instructions made funding my account very easy."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MR</div>
+                            <div>
+                                <h4>Muhammad Raza</h4>
+                                <p>Investor from Islamabad</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <!-- Contact Page -->
+    <div id="contact" class="page">
+        <div class="container">
+            <section class="section">
+                <h2>Contact Us</h2>
+                <p>Have questions or need assistance? Our dedicated support team is here to help you with any queries about investments, deposits, withdrawals, or our services.</p>
+                
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Contact Us" class="content-image">
+                
+                <div class="contact-box">
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>sb1818063@gmail.com</p>
+                                <p style="font-size: 0.9rem; color: #666;">For general inquiries and support</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+92 3365529313</p>
+                                <p style="font-size: 0.9rem; color: #666;">Call during business hours</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4>Support Hours</h4>
+                                <p>24/7 Customer Support</p>
+                                <p style="font-size: 0.9rem; color: #666;">Email responses within 2 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3>Frequently Asked Questions</h3>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h4>How soon can I start earning?</h4>
+                        <p>Your investment starts generating returns immediately after verification of your deposit, typically within 2 hours.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4>Is there any hidden fee?</h4>
+                        <p>No, we believe in complete transparency. All fees are clearly stated before you invest.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4>Can I withdraw my initial investment?</h4>
+                        <p>Yes, after the completion of your investment period, you can withdraw both your initial investment and profits.</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <h4>How secure is my investment?</h4>
+                        <p>We employ bank-level security measures and diversified investment strategies to protect your funds.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Pak Wealth</h3>
+                <p>Your trusted partner for financial growth and investment opportunities in Pakistan. We're committed to helping you achieve your financial goals through secure and profitable investments.</p>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <div class="footer-links">
+                    <a href="#" class="nav-link" data-page="home">Home</a>
+                    <a href="#" class="nav-link" data-page="investment">Investment Plan</a>
+                    <a href="#" class="nav-link" data-page="services">Services</a>
+                    <a href="#" class="nav-link" data-page="deposit">Deposit</a>
+                    <a href="#" class="nav-link" data-page="withdraw">Withdraw</a>
+                </div>
+            </div>
+            
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <div class="footer-links">
+                    <a href="mailto:sb1818063@gmail.com"><i class="fas fa-envelope"></i> sb1818063@gmail.com</a>
+                    <a href="tel:+923365529313"><i class="fas fa-phone"></i> +92 3365529313</a>
+                    <a href="#"><i class="fas fa-map-marker-alt"></i> Lahore, Pakistan</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            &copy; 2023 Pak Wealth - Trusted Investment Platform. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // Page Navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pages = document.querySelectorAll('.page');
+            const planButtons = document.querySelectorAll('.plan-button');
+            const selectedPlanDisplay = document.getElementById('selected-plan');
+            const selectedPlanName = document.getElementById('selected-plan-name');
+            const selectedPlanAmount = document.getElementById('selected-plan-amount');
+            const selectedPlanProfit = document.getElementById('selected-plan-profit');
+            const depositAmount = document.getElementById('deposit-amount');
+            const investmentForm = document.getElementById('investment-form');
+            const investmentPlanSelect = document.getElementById('investment-plan');
+            const toast = document.getElementById('toast');
+            
+            // Plan data
+            const plans = {
+                starter: {
+                    name: 'Starter Plan',
+                    amount: 'PKR 27,000',
+                    profit: 'PKR 12,690'
+                },
+                premium: {
+                    name: 'Premium Plan',
+                    amount: 'PKR 50,000',
+                    profit: 'PKR 26,000'
+                },
+                elite: {
+                    name: 'Elite Plan',
+                    amount: 'PKR 100,000',
+                    profit: 'PKR 60,000'
+                }
+            };
+            
+            // Initialize first page as active
+            showPage('home');
+            
+            // Add click event to navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageId = this.getAttribute('data-page');
+                    showPage(pageId);
+                    
+                    // Scroll to top when changing pages
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            });
+            
+            // Add click event to plan buttons
+            planButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const planType = this.getAttribute('data-plan');
+                    const planAmount = this.getAttribute('data-amount');
+                    
+                    // Update selected plan display
+                    selectedPlanName.textContent = plans[planType].name;
+                    selectedPlanAmount.textContent = plans[planType].amount;
+                    selectedPlanProfit.textContent = plans[planType].profit;
+                    depositAmount.textContent = plans[planType].amount;
+                    
+                    // Update form selection
+                    investmentPlanSelect.value = planType;
+                    
+                    // Show selected plan display
+                    selectedPlanDisplay.classList.add('active');
+                    
+                    // Show toast notification
+                    showToast('Plan selected successfully!');
+                    
+                    // Redirect to deposit page
+                    showPage('deposit');
+                    
+                    // Scroll to selected plan display
+                    setTimeout(() => {
+                        selectedPlanDisplay.scrollIntoView({ behavior: 'smooth' });
+                    }, 500);
+                });
+            });
+            
+            // Handle form submission
+            investmentForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form values
+                const fullName = document.getElementById('full-name').value;
+                const phone = document.getElementById('phone').value;
+                const email = document.getElementById('email').value;
+                const transactionId = document.getElementById('transaction-id').value;
+                const investmentPlan = document.getElementById('investment-plan').value;
+                
+                // In a real application, you would send this data to a server
+                // For this demo, we'll just show a success message
+                
+                // Show success message
+                showToast('Investment details submitted successfully! Our team will contact you shortly.');
+                
+                // Reset form
+                investmentForm.reset();
+                selectedPlanDisplay.classList.remove('active');
+                
+                // Redirect to home page after 3 seconds
+                setTimeout(() => {
+                    showPage('home');
+                }, 3000);
+            });
+            
+            // Function to show selected page
+            function showPage(pageId) {
+                // Hide all pages
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                // Show selected page
+                document.getElementById(pageId).classList.add('active');
+                
+                // Trigger animations for the new page
+                setTimeout(() => {
+                    initAnimations();
+                }, 100);
+            }
+            
+            // Function to show toast notification
+            function showToast(message) {
+                const toastMessage = toast.querySelector('.toast-message');
+                toastMessage.textContent = message;
+                
+                toast.classList.add('active');
+                
+                setTimeout(() => {
+                    toast.classList.remove('active');
+                }, 3000);
+            }
+            
+            // Initialize animations for visible elements
+            function initAnimations() {
+                const sections = document.querySelectorAll('.section');
+                const serviceCards = document.querySelectorAll('.service-card');
+                const steps = document.querySelectorAll('.step');
+                const testimonialCards = document.querySelectorAll('.testimonial-card');
+                const statCards = document.querySelectorAll('.stat-card');
+                
+                // Check if element is in viewport
+                function isInViewport(element) {
+                    const rect = element.getBoundingClientRect();
+                    return (
+                        rect.top >= 0 &&
+                        rect.left >= 0 &&
+                        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+                    );
+                }
+                
+                // Add visible class to elements in viewport
+                function checkVisibility() {
+                    sections.forEach(section => {
+                        if (isInViewport(section)) {
+                            section.classList.add('visible');
+                        }
+                    });
+                    
+                    serviceCards.forEach(card => {
+                        if (isInViewport(card)) {
+                            card.classList.add('visible');
+                        }
+                    });
+                    
+                    steps.forEach(step => {
+                        if (isInViewport(step)) {
+                            step.classList.add('visible');
+                        }
+                    });
+                    
+                    testimonialCards.forEach(card => {
+                        if (isInViewport(card)) {
+                            card.classList.add('visible');
+                        }
+                    });
+                    
+                    statCards.forEach(card => {
+                        if (isInViewport(card)) {
+                            card.classList.add('visible');
+                        }
+                    });
+                }
+                
+                // Initial check
+                checkVisibility();
+                
+                // Check on scroll
+                window.addEventListener('scroll', checkVisibility);
+            }
+            
+            // Initialize animations for the first page
+            initAnimations();
+        });
+    </script>
+</body>
+</html>
